@@ -19,8 +19,7 @@ public interface WebDriverConfig extends Config {
     String getApp();
 
     @Key("remoteUrl")
-//    @DefaultValue("https://hub.browserstack.com/wd/hub")
-    @DefaultValue("https://hub-cloud.browserstack.com/wd/hub")
+    @DefaultValue("https://hub.browserstack.com/wd/hub")
     String getRemoteUrl();
 
     @Key("device")

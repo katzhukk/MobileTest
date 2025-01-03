@@ -32,7 +32,7 @@ public class TestBase {
         String sessionId = Selenide.sessionId().toString();
         Attach.pageSource();
         closeWebDriver();
-        //System.out.println(sessionId);
+        System.out.println(sessionId);
         Attach.addVideo(sessionId);
     }
 }
