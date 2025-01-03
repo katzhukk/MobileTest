@@ -1,5 +1,7 @@
 package tests;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.selector.ByText;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
@@ -31,5 +33,9 @@ public class SearchTests extends TestBase {
         step("Verify content found", () ->
                 $$(id("org.wikipedia.alpha:id/page_list_item_title"))
                         .shouldHave(sizeGreaterThan(0)));
+        step("Open first article", () ->
+                $(id("org.wikipedia.alpha:id/search_results_list")).click());
+        step("Check article", () ->
+                $(id("android.widget.TextView")).shouldHave(Condition.text("Appium")));
     }
 }
